@@ -8,10 +8,16 @@ var paramsArray = [
   json(loadTextContent('./params.2.json')).parameters.accountinfo.value
 ]
 
-module storagemod 'amodule.bicep' = [for i in paramsArray : {
-  name: 'storagemoddeploy'
+module storagemod1 'amodule.bicep' = {
+  name: 'storagemoddeploy1'
   params: {
-    accountinfo: i
+    accountinfo: paramsArray[0]
   }
-}]
+}
 
+module storagemod2 'amodule.bicep' = {
+  name: 'storagemoddeploy2'
+  params: {
+    accountinfo: paramsArray[1]
+  }
+}
