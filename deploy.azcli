@@ -1,0 +1,7 @@
+az deployment group create -g biceptryout -f ./tryout1/main.bicep
+
+/workspaces/vscode-remote-try-bicep/tryout1/main.bicep(1,7) : Warning no-unused-params: Parameter "paramctr" is declared but never used. [https://aka.ms/bicep/linter/no-unused-params]
+/workspaces/vscode-remote-try-bicep/tryout1/main.bicep(11,8) : Warning BCP179: The loop item variable "i" must be referenced in at least one of the value expressions of the following properties: "name", "scope"
+/workspaces/vscode-remote-try-bicep/tryout1/main.bicep(13,3) : Warning explicit-values-for-loc-params: Parameter 'location' of module 'storagemod' isn't assigned an explicit value, and its default value may not give the intended behavior for a location-related parameter. You should assign an explicit value to the parameter. [https://aka.ms/bicep/linter/explicit-values-for-loc-params]
+
+{'code': 'InvalidTemplate', 'message': "Deployment template validation failed: 'The resource 'Microsoft.Resources/deployments/storagemoddeploy' at line '29' and column '5' is defined multiple times in a template. Please see https://aka.ms/arm-template/#resources for usage details.'.", 'additionalInfo': [{'type': 'TemplateViolation', 'info': {'lineNumber': 29, 'linePosition': 5, 'path': 'properties.template.resources[0]'}}]}
